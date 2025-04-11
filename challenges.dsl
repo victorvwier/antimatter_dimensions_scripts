@@ -39,7 +39,7 @@ if eternities < 1e+5 {
   auto eternity 1 ep
   wait eternities > 1e+5
   auto infinity 1e+100 x highest
-  auto infinity 1e+10 x highest
+  auto eternity 1e+10 x highest
 }
 if ec1 completions < 1 {
   studies purchase 11-61, 62, antimatter, 111, idle, 151-171
@@ -126,6 +126,7 @@ if ec4 completions < 1 {
   start ec 4
   wait pending ip >= 1e+2750
   infinity
+  auto infinity 1e+100 x highest
 }
 if ec4 completions < 2 {
   auto infinity 5.1s
@@ -133,6 +134,7 @@ if ec4 completions < 2 {
   start ec 4
   wait pending ip >= 1e+3300
   infinity
+  auto infinity 1e+100 x highest
 }
 if ec4 completions < 3 {
   auto infinity 5.1s
@@ -140,9 +142,10 @@ if ec4 completions < 3 {
   start ec 4
   wait pending ip >= 1e+3850
   infinity
+  auto infinity 1e+100 x highest
 }
 if ep < 1e+40 {
-  auto infinity 1e+200 x highest
+  auto infinity 1e+100 x highest
   auto eternity 1e+1 x highest
   studies purchase 11-61, 62, time, 111, idle, 151-171
   wait ep >=1e+40
@@ -183,6 +186,13 @@ if ec4 completions < 4 {
   start ec 4
   wait pending ip >= 1e+4400
   infinity
+  auto infinity 1e+100 x highest
+}
+if ep < 1e+50 {
+  auto infinity 1e+200 x highest
+  auto eternity 1e+1 x highest
+  studies purchase 11-61, 62, time, 111, idle, 151-171
+  wait ep >=1e+50
 }
 if ec6 completions < 1 {
   auto infinity off
@@ -190,6 +200,7 @@ if ec6 completions < 1 {
   start ec 6
   wait pending ip >= 1e+850
   infinity
+  auto infinity 1e+100 x highest
 }
 if ec6 completions < 2 {
   auto infinity off
@@ -197,6 +208,7 @@ if ec6 completions < 2 {
   start ec 6
   wait pending ip >= 1e+1100
   infinity
+  auto infinity 1e+100 x highest
 }
 if ec6 completions < 3 {
   auto infinity off
@@ -204,6 +216,7 @@ if ec6 completions < 3 {
   start ec 6
   wait pending ip >= 1e+1350
   infinity
+  auto infinity 1e+100 x highest
 }
 if ec6 completions < 4 {
   auto infinity off
@@ -211,6 +224,7 @@ if ec6 completions < 4 {
   start ec 6
   wait pending ip >= 1e+1600
   infinity
+  auto infinity 1e+100 x highest
 }
 if ec6 completions < 5 {
   auto infinity off
@@ -218,6 +232,7 @@ if ec6 completions < 5 {
   start ec 6
   wait pending ip >= 1e+1850
   infinity
+  auto infinity 1e+100 x highest
 }
 if ec7 completions < 1 {
   studies purchase 11-61, 62, time, 111, idle, 151-171
@@ -267,6 +282,7 @@ if ec9 completions < 1 {
   start ec 9
   wait pending ip >= 1e+1750
   infinity
+  auto infinity 1e+100 x highest
 }
 if ec9 completions < 2 {
   auto infinity off
@@ -274,6 +290,7 @@ if ec9 completions < 2 {
   start ec 9
   wait pending ip >= 1e+2000
   infinity
+  auto infinity 1e+100 x highest
 }
 if ec9 completions < 3 {
   auto infinity off
@@ -281,6 +298,7 @@ if ec9 completions < 3 {
   start ec 9
   wait pending ip >= 1e+2250
   infinity
+  auto infinity 1e+100 x highest
 }
 if ec9 completions < 4 {
   auto infinity off
@@ -288,6 +306,7 @@ if ec9 completions < 4 {
   start ec 9
   wait pending ip >= 1e+2500
   infinity
+  auto infinity 1e+100 x highest
 }
 if ec9 completions < 5 {
   auto infinity off
@@ -295,57 +314,5 @@ if ec9 completions < 5 {
   start ec 9
   wait pending ip >= 1e+2750
   infinity
-}
-if ec10 completions < 1 {
-  auto infinity 5.1s
-  studies purchase 11-61, 62, time, 111, active, 151-171, 181
-  start ec 10
-  wait pending ip >= 1e+3000
-  infinity
-}
-if ep < 1e+270 {
-  auto infinity off
-  auto eternity 1e+10 x highest
-  studies purchase 11-61, 62, time, 111, active, 151-171, 181 193 191 212 214 211
-  wait ep >=1e+270
-}
-if ec10 completions < 2 {
-  auto infinity 5.1s
-  studies purchase 11-61, 62, antimatter, 111, idle, 151-171 181 193 191 212 214 211
-  start ec 10
-  wait pending ip >= 1e+3300
-  infinity
-}
-if ec10 completions < 3 {
-  auto infinity 5.1s
-  studies purchase 11-61, 62, antimatter, 111, idle, 151-171 181 193 191 212 214 211
-  start ec 10
-  wait pending ip >= 1e+3600
-  infinity
-}
-if ep < 1e+400 {
-  auto infinity off
-  auto eternity 1e+10 x highest
-  studies purchase 11-61, 62, time, 111, active, 151-171, 181 193 191 212 214 211, 224, 232
-  wait ep >=1e+400
-}
-if ec10 completions < 4 {
-  auto infinity 5.1s
-  studies purchase 11-61, 62, antimatter, 111, idle, 151-171 181 193 191 212 214 211, 224, 232
-  start ec 10
-  wait pending ip >= 1e+3900
-  infinity
-}
-if ep < 1e+500 {
-  auto infinity off
-  auto eternity 1e+10 x highest
-  studies purchase 11-61, 62, time, 111, active, 151-171, 181 193 191 212 214 211 224 232
-  wait ep >=1e+500
-}
-if ec8 completions < 4 {
-  auto infinity off
-  studies purchase 11-61, 62, time, 111, idle, 151-171 181 193 191 212 214 211 224 232
-  start ec 8
-  wait pending ip >= 1e+4000
-  infinity
+  auto infinity 1e+100 x highest
 }
