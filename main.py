@@ -65,7 +65,9 @@ def write_instructions(f: TextIO, instructions: list[Instruction]):
             s(f"if eternities < 1e+{inst.eternity_target} {{")
             s(f"  auto infinity 1.8e+308 ip")
             s(f"  auto eternity 1 ep")
-            s(f"  wait eternities > 1e+{inst.eternity_target}\n")
+            s(f"  wait eternities > 1e+{inst.eternity_target}")
+            s(f"  auto infinity 1e+100 x highest")
+            s(f"  auto infinity 1e+10 x highest")
             s("}")
         elif isinstance(inst, Inline):
             s(f"{inst.command}")
@@ -111,9 +113,9 @@ def get_ip_goal(ec, it):
 
 def main():
     instructions: list[Instruction] = [
-        Farm(ep_target=1, path=Path.TIME, ip_auto=10, ep_auto=1),
-        Challenge(ec=2, it=1, path=Path.TIME),
+        Farm(ep_target=1, path="11-61 time 111", ip_auto=10, ep_auto=1),
         Farm(ep_target=10, path=Path.TIME, ip_auto=100, ep_auto=1),
+        Challenge(ec=2, it=1, path=Path.TIME),
         Challenge(ec=2, it=2, path=Path.TIME),
         Challenge(ec=3, it=1, path=Path.ANTIMATTER),
         Farm(ep_target=28, path=Path.TIME, ip_auto=100, ep_auto=1),

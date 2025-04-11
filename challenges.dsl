@@ -1,20 +1,20 @@
 if ep < 1e+1 {
   auto infinity 1e+10 x highest
   auto eternity 1e+1 x highest
-  studies purchase 11-61, 62, time, 111, idle, 151-171
+  studies purchase 11-61 time 111
   wait ep >=1e+1
-}
-if ec2 completions < 1 {
-  studies purchase 11-61, 62, time, 111, idle, 151-171
-  start ec 2
-  wait pending ip >= 1e+975
-  infinity
 }
 if ep < 1e+10 {
   auto infinity 1e+100 x highest
   auto eternity 1e+1 x highest
   studies purchase 11-61, 62, time, 111, idle, 151-171
   wait ep >=1e+10
+}
+if ec2 completions < 1 {
+  studies purchase 11-61, 62, time, 111, idle, 151-171
+  start ec 2
+  wait pending ip >= 1e+975
+  infinity
 }
 if ec2 completions < 2 {
   studies purchase 11-61, 62, time, 111, idle, 151-171
@@ -38,7 +38,8 @@ if eternities < 1e+5 {
   auto infinity 1.8e+308 ip
   auto eternity 1 ep
   wait eternities > 1e+5
-
+  auto infinity 1e+100 x highest
+  auto infinity 1e+10 x highest
 }
 if ec1 completions < 1 {
   studies purchase 11-61, 62, antimatter, 111, idle, 151-171
