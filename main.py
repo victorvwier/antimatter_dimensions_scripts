@@ -71,12 +71,13 @@ def write_instructions(f: TextIO, instructions: list[Instruction]):
             s(f"{inst.command}")
         elif isinstance(inst, FinalCommand):
             s(f"while ep < 1e+6000 {{")
+            s("  studies nowait purchase 11,21,22,31,32,33,41,42,51,61,62,73,83,93,103,111,121,131,141,151,161,162,171,181,191,192,193,201,72,82,92,102,214,228,234,213,226,212,224,232,211,222,71,81,91,101")
             s("  start dilation")
             s("  pause 3s")
             s("  studies respec")
             s("  eternity")
-            s("  studies purchase 11,21,22,31,32,33,41,42,51,61,62,73,83,93,103,111,121,131,141,151,161,162,171,181,191,192,193,201,72,82,92,102,214,228,234,213,226,212,224,232,211,222")
-            s("  pause 2m")
+            s("  studies nowait purchase 11,21,22,31,32,33,41,42,51,61,62,73,83,93,103,111,121,131,141,151,161,162,171,181,191,192,193,201,72,82,92,102,214,228,234,213,226,212,224,232,211,222,71,81,91,101")
+            s("  pause 10s")
             s("  studies respec")
             s("  eternity")
             s("}")
@@ -110,70 +111,71 @@ def get_ip_goal(ec, it):
 
 def main():
     instructions: list[Instruction] = [
-        # Challenge(ec=2, it=1, path=Path.TIME),
-        # Farm(ep_target=10, path=Path.TIME, ip_auto=100, ep_auto=1),
-        # Challenge(ec=2, it=2, path=Path.TIME),
-        # Challenge(ec=3, it=1, path=Path.ANTIMATTER),
-        # Farm(ep_target=28, path=Path.TIME, ip_auto=100, ep_auto=1),
-        # EternityFarm(eternity_target="5"),
-        # Challenge(ec=1, it=1, path=Path.ANTIMATTER),
-        # Challenge(ec=1, it=2, path=Path.ANTIMATTER),
-        # Challenge(ec=2, it=3, path=Path.ANTIMATTER),
-        # Challenge(ec=1, it=3, path=Path.INFINITY),
-        # Farm(ep_target=33, path=Path.TIME, ip_auto=250, ep_auto=1),
-        # Challenge(ec=3, it=2, path=Path.ANTIMATTER),
-        # Challenge(ec=1, it=4, path=Path.INFINITY),
-        # Challenge(ec=1, it=5, path=Path.INFINITY),
-        # Challenge(ec=3, it=3, path=Path.ANTIMATTER),
+        Farm(ep_target=1, path=Path.TIME, ip_auto=10, ep_auto=1),
+        Challenge(ec=2, it=1, path=Path.TIME),
+        Farm(ep_target=10, path=Path.TIME, ip_auto=100, ep_auto=1),
+        Challenge(ec=2, it=2, path=Path.TIME),
+        Challenge(ec=3, it=1, path=Path.ANTIMATTER),
+        Farm(ep_target=28, path=Path.TIME, ip_auto=100, ep_auto=1),
+        EternityFarm(eternity_target="5"),
+        Challenge(ec=1, it=1, path=Path.ANTIMATTER),
+        Challenge(ec=1, it=2, path=Path.ANTIMATTER),
+        Challenge(ec=2, it=3, path=Path.ANTIMATTER),
+        Challenge(ec=1, it=3, path=Path.INFINITY),
+        Farm(ep_target=33, path=Path.TIME, ip_auto=250, ep_auto=1),
+        Challenge(ec=3, it=2, path=Path.ANTIMATTER),
+        Challenge(ec=1, it=4, path=Path.INFINITY),
+        Challenge(ec=1, it=5, path=Path.INFINITY),
+        Challenge(ec=3, it=3, path=Path.ANTIMATTER),
         
-        # Challenge(ec=3, it=5, path=Path.TIME, ip_auto=1),
-        # Challenge(ec=2, it=4, path=Path.ANTIMATTER),
-        # Challenge(ec=2, it=5, path=Path.TIME),
-        # Challenge(ec=3, it=4, path=Path.ANTIMATTER),
+        Challenge(ec=3, it=5, path=Path.TIME, ip_auto=1),
+        Challenge(ec=2, it=4, path=Path.ANTIMATTER),
+        Challenge(ec=2, it=5, path=Path.TIME),
+        Challenge(ec=3, it=4, path=Path.ANTIMATTER),
 
-        # Challenge(ec=4, it=1, path=Path.TIME),
-        # Challenge(ec=4, it=2, path=Path.TIME),
-        # Challenge(ec=4, it=3, path=Path.TIME),
-        # Farm(ep_target=40,path=Path.TIME,  ip_auto=200, ep_auto=1),
-        # Challenge(ec=5, it=1, path=Path.TIME),
-        # Challenge(ec=5, it=2, path=Path.TIME),
-        # Challenge(ec=5, it=3, path=Path.TIME),
-        # Challenge(ec=5, it=4, path=Path.TIME),
-        # Challenge(ec=5, it=5, path=Path.TIME),
+        Challenge(ec=4, it=1, path=Path.TIME),
+        Challenge(ec=4, it=2, path=Path.TIME),
+        Challenge(ec=4, it=3, path=Path.TIME),
+        Farm(ep_target=40,path=Path.TIME,  ip_auto=200, ep_auto=1),
+        Challenge(ec=5, it=1, path=Path.TIME),
+        Challenge(ec=5, it=2, path=Path.TIME),
+        Challenge(ec=5, it=3, path=Path.TIME),
+        Challenge(ec=5, it=4, path=Path.TIME),
+        Challenge(ec=5, it=5, path=Path.TIME),
 
-        # Challenge(ec=4, it=4, path=Path.TIME),
+        Challenge(ec=4, it=4, path=Path.TIME),
         
-        # Challenge(ec=6, it=1, path=Path.ACTIVE),
-        # Challenge(ec=6, it=2, path=Path.ACTIVE),
-        # Challenge(ec=6, it=3, path=Path.ACTIVE),
-        # Challenge(ec=6, it=4, path=Path.ACTIVE),
-        # Challenge(ec=6, it=5, path=Path.ACTIVE),
+        Challenge(ec=6, it=1, path=Path.ACTIVE),
+        Challenge(ec=6, it=2, path=Path.ACTIVE),
+        Challenge(ec=6, it=3, path=Path.ACTIVE),
+        Challenge(ec=6, it=4, path=Path.ACTIVE),
+        Challenge(ec=6, it=5, path=Path.ACTIVE),
 
-        # Challenge(ec=7, it=1, path=Path.TIME),
-        # Challenge(ec=7, it=2, path=Path.TIME),
-        # Challenge(ec=7, it=3, path=Path.TIME),
-        # Challenge(ec=7, it=4, path=Path.TIME),
+        Challenge(ec=7, it=1, path=Path.TIME),
+        Challenge(ec=7, it=2, path=Path.TIME),
+        Challenge(ec=7, it=3, path=Path.TIME),
+        Challenge(ec=7, it=4, path=Path.TIME),
         
 
-        # Challenge(ec=8, it=1, path=Path.TIME),
-        # Challenge(ec=8, it=2, path=Path.TIME),
-        # Challenge(ec=8, it=3, path=Path.TIME),
+        Challenge(ec=8, it=1, path=Path.TIME),
+        Challenge(ec=8, it=2, path=Path.TIME),
+        Challenge(ec=8, it=3, path=Path.TIME),
         
-        # Challenge(ec=9, it=1, path=Path.ACTIVE),
-        # Challenge(ec=9, it=2, path=Path.ACTIVE),
-        # Challenge(ec=9, it=3, path=Path.ACTIVE),
-        # Challenge(ec=9, it=4, path=Path.ACTIVE),
-        # Challenge(ec=9, it=5, path=Path.ACTIVE),
+        Challenge(ec=9, it=1, path=Path.ACTIVE),
+        Challenge(ec=9, it=2, path=Path.ACTIVE),
+        Challenge(ec=9, it=3, path=Path.ACTIVE),
+        Challenge(ec=9, it=4, path=Path.ACTIVE),
+        Challenge(ec=9, it=5, path=Path.ACTIVE),
 
-        # Challenge(ec=10, it=1, path=Path.ACTIVE),
-        # Farm(ep_target=270, ip_auto=1000, path=str(Path.ACTIVE)+" 193 191 212 214 211", ep_auto=10),
-        # Challenge(ec=10, it=2, path=str(Path.ANTIMATTER)+" 181 193 191 212 214 211"),
-        # Challenge(ec=10, it=3, path=str(Path.ANTIMATTER)+" 181 193 191 212 214 211"),
-        # Farm(ep_target=400, ip_auto=1000, path=str(Path.ACTIVE)+" 193 191 212 214 211, 224, 232", ep_auto=10),
-        # Challenge(ec=10, it=4, path=str(Path.ANTIMATTER)+" 181 193 191 212 214 211, 224, 232"),
+        Challenge(ec=10, it=1, path=Path.ACTIVE),
+        Farm(ep_target=270, ip_auto=1000, path=str(Path.ACTIVE)+" 193 191 212 214 211", ep_auto=10),
+        Challenge(ec=10, it=2, path=str(Path.ANTIMATTER)+" 181 193 191 212 214 211"),
+        Challenge(ec=10, it=3, path=str(Path.ANTIMATTER)+" 181 193 191 212 214 211"),
+        Farm(ep_target=400, ip_auto=1000, path=str(Path.ACTIVE)+" 193 191 212 214 211, 224, 232", ep_auto=10),
+        Challenge(ec=10, it=4, path=str(Path.ANTIMATTER)+" 181 193 191 212 214 211, 224, 232"),
 
-        # Farm(ep_target=500, ip_auto=1000, path=str(Path.ACTIVE)+" 193 191 212 214 211 224 232", ep_auto=10),
-        # Challenge(ec=8, it=4, path=str(Path.TIME) + " 181 193 191 212 214 211 224 232"),
+        Farm(ep_target=500, ip_auto=1000, path=str(Path.ACTIVE)+" 193 191 212 214 211 224 232", ep_auto=10),
+        Challenge(ec=8, it=4, path=str(Path.TIME) + " 181 193 191 212 214 211 224 232"),
 
 
         
@@ -197,8 +199,8 @@ def main():
         # Farm(ep_target=1000, ip_auto=1000, path="11,21,22,31,32,33,41,42,51,61,62,73,83,93,103,111,121,131,141,151,161,162,171,181,191,192,193,201,72,82,92,102,214,228,234,213,226,212,224,232,211,222,71", ep_auto=20),
         
         # Challenge(ec=11, it=5, path="11,21,22,31,32,41,42,51,61,62,71,81,91,101,111,123,133,143,151,161,162,171,181,191,192,193,211,212,213,222,223,225,231,214,233"),
-        Farm(ep_target=1500, ip_auto=1000, path="11,21,22,31,32,33,41,42,51,61,62,73,83,93,103,111,121,131,141,151,161,162,171,181,191,192,193,201,72,82,92,102,214,228,234,213,226,212,224,232,211,222", ep_auto=100),
-        FinalCommand(),
+        # Farm(ep_target=1500, ip_auto=1000, path="11,21,22,31,32,33,41,42,51,61,62,73,83,93,103,111,121,131,141,151,161,162,171,181,191,192,193,201,72,82,92,102,214,228,234,213,226,212,224,232,211,222", ep_auto=100),
+        # FinalCommand(),
         
     ]
 
