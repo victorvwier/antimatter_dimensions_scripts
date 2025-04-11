@@ -67,7 +67,7 @@ def write_instructions(f: TextIO, instructions: list[Instruction]):
             s(f"  auto eternity 1 ep")
             s(f"  wait eternities > 1e+{inst.eternity_target}")
             s(f"  auto infinity 1e+100 x highest")
-            s(f"  auto infinity 1e+10 x highest")
+            s(f"  auto eternity 1e+10 x highest")
             s("}")
         elif isinstance(inst, Inline):
             s(f"{inst.command}")
